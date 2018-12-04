@@ -13,7 +13,7 @@ before_install:
 - npm install -g greenkeeper-lockfile
 addons:
   apt:
-    packages:
+    packages: 
     - xvfb
 before_script:
 - greenkeeper-lockfile-update
