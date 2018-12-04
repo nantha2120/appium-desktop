@@ -28,7 +28,7 @@
     "lint": "eslint app test *.js",
     "build-main": "cross-env NODE_ENV=production parcel build --target node --out-dir . --out-file main.js ./app/main/main.development.js",
     "build-renderer": "cross-env NODE_ENV=production parcel build --out-dir dist --target electron --public-url . ./app/renderer/index.html",
-    "build": "npm run clean && npm run build-main && npm run build-renderer",
+    "build": "rimraf .cache/ && npm run clean && npm run build-main && npm run build-renderer",
     "start": "cross-env RUNNING_LOCALLY=true FORCE_NO_WRONG_FOLDER=true electron ./",
     "clean": "rimraf dist/",
     "watch-main": "cross-env NODE_ENV=developpment parcel --target node --out-dir . --out-file main.js ./app/main/main.development.js",
